@@ -65,3 +65,7 @@ explain analyse select * from jointable1
 	join jointable2 on jointable2.grp = jointable1.grp
 	join jointable3 on jointable3.grp = jointable2.grp
 where id1 + id2 + id3 = 8297;
+
+explain analyse
+select id, name, value, id * value, id % (value + 1) from test
+where log(id) * value < 1000;
